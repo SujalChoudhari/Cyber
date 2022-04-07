@@ -1,0 +1,83 @@
+{
+    "3.0.2":{
+        "title": "Duopoly",
+        "desc": "Most of the commands are transformed to both text based (old) and application commands(slash)",
+        "fields":{
+            "welcomer":"Welcome System Added",
+            "database":"Shifted data base to MongoDB",
+            "control": "You can control which systems will be enabled for the server and can disable as per liking",
+            "on/off": "Welcome and Emoji Systems can be toggled on and off by admins"
+        }
+    },
+    
+    "3.0.1":{
+        "title": "Remaking the Bot",
+        "desc": "Bot is going under various revisions, and will be recoded several times.",
+        "fields":{
+            "website":" Website is under reconstruction"
+        }
+    },
+    "3.0.0":{
+        "title": "Big News!(CyberFire)",
+        "desc": "Finally Cyber has Slash commands \nKick and Reinvite Cyber with the new invite link",
+        "fields":{
+            "nostalgic": "You can you both slash commands and the normal ones",
+            "levels": "Levelling system discontinued...",
+            "archived": "Old Code for Cyber is archived,and will not be maintained",
+            "changed": "Switched to pycord library",
+            "lit!": "Icon Changed to match the CyberFire Theme for version 3",
+            "bye": "Website and Leaderboard, are discontinued",
+            "link": "https://discord.com/api/oauth2/authorize?client_id=848090367022727179&permissions=1375933123703&scope=applications.commands%20bot"
+        }
+    },
+    "2.8.1d":{
+        "title": "Hyperlinks Ignored",
+        "desc":"Now the emoticon system ignores http(s) links and doesn't provide any emoji based on it",
+        "fields":{}
+   }
+,    "2.8.1c":{
+        "title": "Emoticons",
+        "desc": "just try doing XD or => now!",
+        "fields":{
+            "=>": "Now all (most of) the emojies will be read by cyber and provide a (mostly) relevent gif"
+        }
+    },
+    
+    "2.8.1b":{
+        "title": "Gif",
+        "desc": "u are used to gifs right, :troll: if a server has the emoji, discord will handle it, if not let cyber to handle it",
+        "fields":{
+            "format":"should start with ':' and then the name/text."
+,
+            "examples":":troll:, :rickroll, :kill me:,  :hello, etc",
+            "tenor": "credits are required ig, all the gifs are from tenor!"
+        }
+    },
+    "2.8.1a":{
+        "title":"Reboot!",
+        "desc": "Deprecated old commands and cogs",
+        "fields":{
+            "removed": "Economy(CyberCoins),Fun,General(Unused Part),Giveaways,Polls"
+        }
+    },
+    
+    
+    "2.8.1":{
+        "title":"Added Plans!",
+        "desc": "Now all the plans for the bot will be logged,",
+        "fields":{
+            "command": "<prefix>plans"
+        }
+    },
+    
+    "2.8.0":{
+        "title":"Added Changelogs!",
+        "desc": "Now all the changes will be logged here, Other changes are,",
+        "fields":{
+            "creators":"Creators will be credited in the footer of help command",
+            "leaderboard": "Only top 50 active Users will be displayed over the website",
+            "status": "Bot changes its activity status every 30 seconds"
+        }
+    }
+
+}
