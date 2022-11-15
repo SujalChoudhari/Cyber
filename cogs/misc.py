@@ -1,6 +1,7 @@
 import json
 from assist import support
 import discord
+from discord.ui import Button, View
 from discord.ext import commands
 from discord.commands import slash_command
 
@@ -20,10 +21,12 @@ class Misc(commands.Cog):
         except discord.Forbidden:
             await ctx.send("I don't have permission to `Manage Messages`:disappointed_relieved:")
 
-    @slash_command(name='help',guild_ids=[933352705437614091])
+    @slash_command(name='help')
     async def help(self, ctx, detailed:bool=False):
+        await ctx.respond("help  is not supported for slash commands, use `//help` instead")
+
         """Display help"""
-        embed = discord.Embed(title="Commands of Cyber", colour=discord.Colour(0x7f20a0))
+        """embed = discord.Embed(title="Commands of Cyber", colour=discord.Colour(0x7f20a0))
 
         embed.set_footer(text="Cyber by NotSujal#8873✨")
 
@@ -48,7 +51,7 @@ class Misc(commands.Cog):
             await ctx.respond(embed=embed)
         except Exception:
             await ctx.respond("I don't have permission to send embeds here :disappointed_relieved:")
-
+"""
     @commands.command(name='invite')
     async def old_invite(self,ctx):
         await self._invite(ctx)
@@ -59,9 +62,15 @@ class Misc(commands.Cog):
     
     async def _invite(self, ctx):
         """My invite link"""
-        e= discord.Embed(title="Invite",description= f"""[Link](https://discord.com/api/oauth2/authorize?client_id=848090367022727179&permissions=8&scope=bot%20applications.commands)""")
-        try: await ctx.respond(embed= e)
-        except: await ctx.send(embed=e )
+        
+        link = Button(label="Invite",style=discord.ButtonStyle.link,url="https://discord.com/api/oauth2/authorize?client_id=848090367022727179&permissions=8&scope=bot%20applications.commands")
+        view = View()
+        view.add_item(link)
+        
+        
+        # e= discord.Embed(title="Invite",description= f"""[Link](https://discord.com/api/oauth2/authorize?client_id=848090367022727179&permissions=8&scope=bot%20applications.commands)""")
+        try: await ctx.respond(view=view)
+        except: await ctx.send(view=view)
 
     @commands.command(name='ping', aliases=['latency'])
     async def old_ping(self, ctx):

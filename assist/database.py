@@ -5,10 +5,11 @@ class DataBase():
     DEFAULT_SERVER = {
         "emoji_toggle": True,
         "welcome_toggle": False,
-        "welcome_channel": 404
+        "welcome_channel": 404,
+        "mod_role": None
     }
     def __init__(self):
-        self.conn_string = f"mongodb+srv://repl-cyber:{os.environ['REPL_CYBER']}@cluster0.zrypc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+        self.conn_string = f"mongodb+srv://repl-bot:{os.environ['REPL_CYBER']}@cluster0.5iyylus.mongodb.net/?retryWrites=true&w=majority"
         self.client = pymongo.MongoClient(self.conn_string)
         self.database = self.client['database']
         self.colls = {}
