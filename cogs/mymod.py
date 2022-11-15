@@ -27,9 +27,10 @@ class MyMod(commands.Cog):
             mod_channel = server["mod_mod_channel"]
             mod_channel = ctx.guild.get_channel(mod_channel)
             e = discord.Embed(title=f"By {ctx.message.author.name}",description=query)
+            
             await mod_channel.send(embed = e)
-            try: await ctx.respond("Responce Sent")
-            except: await ctx.send("Responce Sent")
+            try: await ctx.respond("Response Sent")
+            except: await ctx.send("Response Sent")
         else:
             try: await ctx.respond("This server is not using MyMod, Pathetic! Set a mod channel to start")
             except: await ctx.send("This server is not using MyMod, Pathetic! Set a mod channel to start")

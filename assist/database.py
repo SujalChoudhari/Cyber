@@ -1,4 +1,4 @@
-import os
+import os, json
 import pymongo, dns
 
 class DataBase():
@@ -50,11 +50,6 @@ class DataBase():
         for arg in args:
             self.colls[arg] = self.database[arg]
             
-    def getdata(self,type,id,default={}):
-        res = self._query(type,{"_id":id})
-        if res == None:
-            res = default
-        return res
 
     def savedata(self,type,id,data):
         coll = self.coll_loc(type)
@@ -63,6 +58,13 @@ class DataBase():
             self._update(type,id,data)
         else: #! exists
             self._insert(type,{"_id":id,**data})
+    
+    def getdata(self,type,id,default={}):
+        res = self._query(type,{"_id":id})
+        if res == None:
+            self.savedata(type,id,default)
+            res = default
+        return res
 
     def reset_coll(self,coll):
         return self._reset(coll)

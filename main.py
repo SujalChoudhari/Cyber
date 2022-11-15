@@ -28,24 +28,28 @@ ending_note = "{ctx.bot.user.name} @NotSujal#8873"
 
 client.help_command = PrettyHelp(ending_note=ending_note)
 
+
 @client.event
 async def on_ready():
     print(f"\n\nLogged in as {client.user}\n\n")
-
-    e = discord.Embed(title="Cyber Started!",
-                      description="Cyber is up and running...")
-
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="//help"))
+    e = discord.Embed(title="Cyber Started!",description="Cyber is up and running...")
     await support.send_message(client, "info", e)
 
+@client.event
+async def on_command_error(ctx, error):
+    e = discord.Embed(title="Error!",
+                      description=error)
+    await ctx.send(embed=e)
 
 for filename in os.listdir('./cogs'):
     if filename.endswith(".py"):
         client.load_extension(f"cogs.{filename[:-3]}")
 
+
 keep_alive()
 try:
     client.run(os.environ['TOKEN'])
-except Exception as e:
-    print(f"!!{e}!!")
-    while True:
-        pass
+except discord.errors.HTTPException:
+    os.system('kill 1')
+    os.system("python restarter.py")

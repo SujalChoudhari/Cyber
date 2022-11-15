@@ -1,9 +1,9 @@
 {    "3.0.3":{
         "title": "Dead or Alive?",
         "desc": "So bot was down for few months. Now bot is active and running. Might stay online forever or for few more days.",
-        fields:{
-            "plan": "No body uses cyber bot, thus it will go now or later."
-            "data": "Yes, the stored settings were deleted, sorry fot that, you can reset those now",
+        "fields":{
+            "plan": "No body uses cyber bot, thus it will go now or later.",
+            "data": "Yes, the stored settings were deleted, sorry fot that, you can reset those now"
         }
     },
     "3.0.2":{
